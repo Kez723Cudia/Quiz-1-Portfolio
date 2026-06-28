@@ -26,3 +26,36 @@ A personal portfolio project requirement for Quiz 1, built with Django and Boots
 ```bash
     python -m django --version
 ```
+## Project Initialization
+This repository has been initialized with Django.
+
+Then:
+```bash
+    django-admin startproject portfolio .
+```
+### Project Structure
+```bash
+    Quiz-1-Portfolio/
+    ├── manage.py
+    ├── portfolio/
+    │   ├── init.py
+    │   ├── asgi.py
+    │   ├── settings.py
+    │   ├── urls.py
+    │   ├── wsgi.py
+    ├── venv/
+    │   ├── Include/
+    │   ├── Lib/
+    │   ├── Scripts/
+    │   └── pyvenv.cfg
+    ├── .gitignore
+    ├── README.md
+    └── requirements.txt
+```
+
+- `manage.py` is the command-line utility for project management.  
+- `portfolio/` is the Django project folder with settings, URLs, WSGI, and ASGI entry points.  
+- `venv/` means Virtual environment (not tracked in GitHub if `.gitignore` is set correctly)
+- `.gitignore` is to specify files/folders to exclude from version control.  
+- `requirements.txt` lists Python dependencies.  
+- `README.md` is the documentation file.  
