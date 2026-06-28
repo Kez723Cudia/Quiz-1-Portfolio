@@ -64,6 +64,23 @@
             from { opacity: 0; transform: translateY(50px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        .nav-link {
+            font-size: 1rem;
+            font-weight: 600;
+            color: royalblue;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        .nav-link:hover {
+            color: #f8f9fa;
+        }
+        .nav-left {
+            float: left;
+        }
+
+
     </style>
 </head>
 <body>
@@ -95,6 +112,11 @@
             <p>WhatsApp: <a href="https://wa.me/639610989638" target="_blank">+63 961 098 9638</a></p>
             <p>Location: San Fernando, Pampanga, Philippines</p>
             <p>Availability: Open for opportunities, flexible depending on project scope</p>
+            
+        <!-- Navigation link -->
+        <a href="{% url 'projects' %}" class="nav-link nav-left">← Previous</a>
+
+
         </div>
     </div>
 </body>
