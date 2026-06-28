@@ -46,10 +46,24 @@
             float: right;
             margin-top: 1rem;
         }
-        .see-more:hover {
-            color: #f8f9fa;
-            transform: translateX(5px);
+        .nav-link {
+            font-size: 1rem;
+            font-weight: 600;
+            color: royalblue;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
         }
+        .nav-link:hover {
+            color: #f8f9fa;
+        }
+        .nav-left {
+            float: left;
+        }
+        .nav-right {
+            float: right;
+        }
+
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(50px); }
             to { opacity: 1; transform: translateY(0); }
@@ -88,8 +102,10 @@
             <p>Planned projects leveraging AWS and Azure for scalable IoT systems, integrating sustainable engineering with modern cloud infrastructure.</p>
         </div>
 
-        <!-- Navigation polish -->
-        <a href="{% url 'contact' %}" class="see-more">See more ➔</a>
+        <!-- Navigation links -->
+        <a href="{% url 'skills' %}" class="nav-link nav-left">← Previous</a>
+        <a href="{% url 'contact' %}" class="nav-link nav-right">See more ➔</a>
+
     </div>
 </body>
 </html>

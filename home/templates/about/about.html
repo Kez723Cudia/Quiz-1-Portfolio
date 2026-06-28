@@ -86,6 +86,25 @@
             from { opacity: 0; transform: translateY(50px); }
             to { opacity: 1; transform: translateY(0); }
         }
+                .nav-link {
+            font-size: 1rem;
+            font-weight: 600;
+            color: royalblue;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        .nav-link:hover {
+            color: #f8f9fa;
+            transform: translateX(5px);
+        }
+        .nav-left {
+            float: left;
+        }
+        .nav-right {
+            float: right;
+        }
+
     </style>
 </head>
 <body>
@@ -115,8 +134,11 @@
                 <li>Mastering modern frameworks (React, Next.js)</li>
                 <li>Fitness & discipline as foundations for growth</li>
             </ul>
-            <!-- See more link -->
-            <a href="{% url 'skills' %}" class="see-more">See more ➔</a>
+          <!-- Navigation links -->
+            <a href="{% url 'home' %}" class="nav-link nav-left">← Previous</a>
+            <a href="{% url 'skills' %}" class="nav-link nav-right">See more ➔</a>
+
+
         </div>
     </div>
 </body>
