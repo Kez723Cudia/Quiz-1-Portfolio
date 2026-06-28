@@ -72,6 +72,11 @@ Then:
 - Basic Hero page view added and tested at root URL (`/`).
 - Server runs successfully with no issues (`python manage.py check` passed).
 - Bootstrap integrated via CDN and verified with placeholder page.
-- Bootstrap Navbar added to hero.html and verified locally.
+- Bootstrap Navbar added and verified locally.
 - Bootstrap Hero section created with heading, tagline, and CTA button.
-- Initial design and layout improvement in Hero.
+- Hero page redesigned with split layout:
+  - Dark left side (3/5 width) with name, surname, tagline, and CTA button.
+  - Professional font applied to names, larger font sizes, and repositioned higher.
+  - Tagline font size and thickness increased proportionally.
+  - CTA button styled with navy border and matching metallic blue background.
+  - Right side (2/5 width) updated to darker metallic blue, consistent with button color.
