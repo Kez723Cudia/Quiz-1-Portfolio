@@ -18,29 +18,29 @@
             justify-content: flex-start;
             align-items: flex-start;
             padding: 5rem 4rem;
-            font-family: Helvetica, Arial, sans-serif; /* Helvetica font */
+            font-family: Helvetica, Arial, sans-serif;
             animation: fadeInLeft 1.5s ease-in-out;
         }
         .hero-left h1 {
-            font-size: 5.5rem; /* increased size */
+            font-size: 5.5rem;
             font-weight: 800;
             color: #f8f9fa;
             letter-spacing: 0.03em;
             margin-bottom: 0.5rem;
-            transform: scaleY(1.1); /* vertical stretch */
+            transform: scaleY(1.1);
         }
         .hero-left h2 {
-            font-size: 5rem; /* increased size */
+            font-size: 5rem;
             font-weight: 800;
             color: navy;
             letter-spacing: 0.03em;
             margin-bottom: 1rem;
-            transform: scaleY(1.1); /* vertical stretch */
+            transform: scaleY(1.1);
         }
         .hero-left h3 {
             font-size: 2rem;
             font-weight: 600;
-            color: royalblue; /* same color as vertical bar */
+            color: royalblue;
             margin-bottom: 1rem;
             display: flex;
             align-items: center;
@@ -55,7 +55,7 @@
             font-size: 2rem;
             font-weight: 600;
             color: rgba(248, 249, 250, 0.8);
-            letter-spacing: 0.02em; /* decreased spacing */
+            letter-spacing: 0.02em;
             margin-bottom: 1.5rem;
         }
         .btn-custom {
@@ -76,15 +76,18 @@
         }
         .stack-container {
             background-color: rgba(0, 0, 0, 0.5);
-            flex: 1.2; /* slightly larger containers */
+            flex: 1.2;
             margin: 0.5rem 0;
             padding: 1.5rem;
             border-radius: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .stack-container h4 {
             font-size: 1.6rem;
             font-weight: 500;
-            color: #f8f9fa; /* lighter so it stands out */
+            color: #f8f9fa;
             margin-bottom: 1rem;
         }
         .stack-items {
@@ -99,6 +102,27 @@
             border-radius: 0.3rem;
             font-size: 1rem;
             font-weight: 500;
+        }
+        .sub-box {
+            background-color: rgba(173, 216, 230, 0.2);
+            padding: 0.8rem;
+            border-radius: 0.3rem;
+            text-align: left;
+        }
+        .sub-box h5 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: royalblue; /* same as Full-stack Engineer */
+            margin-bottom: 0.5rem;
+        }
+        .sub-box p {
+            font-size: 1rem;
+            color: rgba(248, 249, 250, 0.8);
+        }
+        .status-text {
+            font-size: 1rem;
+            color: rgba(248, 249, 250, 0.6); /* semi-transparent light text */
+            margin-top: 0.5rem;
         }
         @keyframes fadeInLeft {
             from { opacity: 0; transform: translateX(-50px); }
@@ -120,8 +144,17 @@
 
         <!-- Right Side -->
         <div class="hero-right">
-            <div class="stack-container"></div>
+            <!-- Upper Container -->
             <div class="stack-container">
+                <div style="flex:1; color:#f8f9fa; font-size:2.5rem; font-weight:700;">23+</div>
+                <div class="sub-box" style="flex:1;">
+                    <h5>Clients</h5>
+                    <p>Worldwide</p>
+                </div>
+            </div>
+
+            <!-- Middle Container -->
+            <div class="stack-container" style="flex-direction: column; align-items: flex-start;">
                 <h4>Primary Stack</h4>
                 <div class="stack-items">
                     <div class="stack-item">Django</div>
@@ -135,7 +168,15 @@
                     <div class="stack-item">React</div>
                 </div>
             </div>
-            <div class="stack-container"></div>
+
+            <!-- Lower Container -->
+            <div class="stack-container" style="flex-direction: column; align-items: flex-start;">
+                <h4>Status</h4>
+                <div class="sub-box">
+                    <p>Available for opportunities</p>
+                </div>
+                <p class="status-text">Open for full-time roles & consulting</p>
+            </div>
         </div>
     </div>
 
