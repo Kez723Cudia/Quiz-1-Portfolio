@@ -1,0 +1,11 @@
+# Ignore virtual environment
+venv/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore environment/IDE settings
+*.env
+.vscode/
+#For the sake of keeping my repo clean =D
