@@ -59,3 +59,9 @@ Then:
 - `.gitignore` is to specify files/folders to exclude from version control.  
 - `requirements.txt` lists Python dependencies.  
 - `README.md` is the documentation file.  
+
+### Notes
+
+- `db.sqlite3` is created automatically after migrations.
+- It is excluded from version control via `.gitignore` to keep the repository clean.
+
