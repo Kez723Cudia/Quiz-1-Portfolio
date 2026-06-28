@@ -8,4 +8,8 @@ __pycache__/
 # Ignore environment/IDE settings
 *.env
 .vscode/
+
+# Ignore SQLite database
+db.sqlite3
+
 #For the sake of keeping my repo clean =D
