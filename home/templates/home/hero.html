@@ -6,10 +6,46 @@
     <!-- Bootstrap CSS via CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .hero-container {
+        .tracker-navbar {
+            position: absolute;   /* stays inside Hero frame */
+            bottom: 0;            /* align to bottom frame */
+            left: 0;
+            width: 100%;
             display: flex;
-            height: 100vh;
+            justify-content: center;   /* keep links centered horizontally */
+            gap: 2rem;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.5rem 0;
+            z-index: 1000;
         }
+
+        .tracker-link {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #127CD6;       /* Outlook blue */
+            text-decoration: none; /* remove underline for all links */
+            transition: all 0.3s ease;
+        }
+
+        .tracker-link:hover {
+            color: #0072C6;       /* Spanish blue */
+            transform: translateX(5px); /* slight right shift on hover */
+        }
+
+        .tracker-active {
+            color: #0072C6;       /* Active page shade */
+            border-bottom: 2px solid #0072C6; /* underline only active */
+            padding-bottom: 2px;
+        }
+
+
+        .hero-container {
+            position: relative;   /* allow absolute children */
+            display: flex;
+            height: 100vh;        /* one solid frame */
+            overflow: hidden;     /* prevent scrollbars */
+        }
+
         .hero-left {
             flex: 3; /* 3/5 width */
             background-color: #111;
@@ -125,6 +161,7 @@
             margin-top: 0.5rem;
         }
         .see-more {
+            display: inline-block;   
             font-size: 1rem;
             font-weight: 600;
             color: #f8f9fa;
@@ -135,6 +172,8 @@
             color: royalblue;
             transform: translateX(5px);
         }
+
+        
         @keyframes fadeInLeft {
             from { opacity: 0; transform: translateX(-50px); }
             to { opacity: 1; transform: translateX(0); }
@@ -193,11 +232,20 @@
                         <p class="status-text">Available for full-time roles & consulting</p>
                     </div>
                     <div>
-                        <a href="{% url 'about' %}" class="see-more">See more ➔</a>
+                        <a href="{% url 'about' %}" class="see-more">See more > </a>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Tracker Navbar sits at bottom of Hero -->
+        <nav class="tracker-navbar">
+            <a href="{% url 'home' %}" class="tracker-link tracker-active">Hero</a>
+            <a href="{% url 'about' %}" class="tracker-link">About</a>
+            <a href="{% url 'skills' %}" class="tracker-link">Skills</a>
+            <a href="{% url 'projects' %}" class="tracker-link">Projects</a>
+            <a href="{% url 'contact' %}" class="tracker-link">Contact</a>
+        </nav>
     </div>
 
     <!-- Bootstrap JS -->

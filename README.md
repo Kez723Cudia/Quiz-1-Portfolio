@@ -85,3 +85,7 @@ Then:
 - Hero page finalized with upper stats (23+ Clients Worldwide), middle Primary Stack section, and lower Status section (Available for opportunities, open for full-time roles & consulting).
 - Added Hero page with "See more ➔" navigation
 - Implemented About page with bio, timeline, passions, and cohesive design
+- Implemented Skills page with categorized competencies (Technical, Professional, Soft).
+- Added hover animations for Previous/See more links across all pages.
+- Added hover animations for tracker navbar links.
+- Fixed tracker navbar active state indicator (underline only active page).
