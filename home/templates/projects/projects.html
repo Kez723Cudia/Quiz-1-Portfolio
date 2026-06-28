@@ -56,6 +56,7 @@
         }
         .nav-link:hover {
             color: #f8f9fa;
+            transform: translateX(5px);
         }
         .nav-left {
             float: left;
@@ -68,6 +69,34 @@
             from { opacity: 0; transform: translateY(50px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        .tracker-navbar {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .tracker-link {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #127CD6; /* Outlook blue */
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .tracker-link:hover {
+            color: #0072C6;
+            transform: translateX(5px);
+        }
+
+        .tracker-active {
+            color: #0072C6; /* Active page shade */
+            border-bottom: 2px solid #0072C6;
+            padding-bottom: 2px;
+        }
+
+
     </style>
 </head>
 <body>
@@ -103,9 +132,16 @@
         </div>
 
         <!-- Navigation links -->
-        <a href="{% url 'skills' %}" class="nav-link nav-left">← Previous</a>
-        <a href="{% url 'contact' %}" class="nav-link nav-right">See more ➔</a>
+        <a href="{% url 'skills' %}" class="nav-link nav-left">< Previous</a>
+        <a href="{% url 'contact' %}" class="nav-link nav-right">See more > </a>
 
+        <nav class="tracker-navbar">
+            <a href="{% url 'home' %}" class="tracker-link">Hero</a>
+            <a href="{% url 'about' %}" class="tracker-link">About</a>
+            <a href="{% url 'skills' %}" class="tracker-link">Skills</a>
+            <a href="{% url 'projects' %}" class="tracker-link tracker-active">Projects</a>
+            <a href="{% url 'contact' %}" class="tracker-link">Contact</a>
+        </nav>
     </div>
 </body>
 </html>
