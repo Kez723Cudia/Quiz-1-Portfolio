@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About - Engr. Kezia Yuriese Cudia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #111;
+            font-family: Helvetica, Arial, sans-serif;
+            color: #f8f9fa;
+        }
+        .about-container {
+            padding: 5rem 4rem;
+            animation: fadeInUp 1.5s ease-in-out;
+            position: relative;
+        }
+        .about-container h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            color: navy;
+            margin-bottom: 1rem;
+        }
+        .about-container h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: royalblue;
+            margin-bottom: 2rem;
+        }
+        .about-container p {
+            font-size: 1.2rem;
+            color: rgba(248, 249, 250, 0.85);
+            margin-bottom: 1.5rem;
+        }
+        .timeline {
+            margin-top: 3rem;
+        }
+        .timeline-item {
+            background-color: rgba(173, 216, 230, 0.1);
+            padding: 1rem;
+            border-left: 4px solid royalblue;
+            margin-bottom: 1.5rem;
+            border-radius: 0.3rem;
+        }
+        .timeline-item h5 {
+            font-weight: 700;
+            color: royalblue;
+        }
+        .passions {
+            margin-top: 3rem;
+            position: relative;
+        }
+        .passions h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: navy;
+            margin-bottom: 1rem;
+        }
+        .passions ul {
+            list-style: none;
+            padding: 0;
+        }
+        .passions li {
+            background-color: rgba(173, 216, 230, 0.2);
+            margin-bottom: 0.5rem;
+            padding: 0.6rem 1rem;
+            border-radius: 0.3rem;
+            font-weight: 500;
+            color: rgba(248, 249, 250, 0.9);
+        }
+        .see-more {
+            position: absolute;
+            bottom: -2rem;
+            right: 0;
+            font-size: 1rem;
+            font-weight: 600;
+            color: royalblue;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .see-more:hover {
+            color: #f8f9fa;
+            transform: translateX(5px);
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="about-container container">
+        <h1>About Me</h1>
+        <h2>Manifesting My Future</h2>
+        <p>I am Kezia Yuriese Cudia, a Computer Engineering student specializing in hardware‑software integration and sustainable system design. I have built prototypes such as an Arduino‑based Waste Detection System and a Load‑Responsive Energy Harvesting Cart, applying engineering theory to practical solutions.</p>
+        <p>Recognized for leadership, adaptability, and problem‑solving through ROTC and collaborative projects, I am committed to becoming a remarkable Computer Engineer who designs systems that are both functional and transformative.</p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <h5>2026 – Present</h5>
+                <p>Learning Django, Bootstrap, and Git workflows. Building my first professional portfolio to showcase growth and dedication.</p>
+            </div>
+            <div class="timeline-item">
+                <h5>Future Goals</h5>
+                <p>To be recognized as an engineer who bridges hardware and software, develops sustainable systems, and contributes innovative solutions that improve lives.</p>
+            </div>
+        </div>
+
+        <div class="passions">
+            <h3>Passions & Focus</h3>
+            <ul>
+                <li>Hardware‑software integration for real‑world systems</li>
+                <li>Sustainable engineering and energy solutions</li>
+                <li>Cloud deployment (AWS, Azure) for IoT projects</li>
+                <li>Mastering modern frameworks (React, Next.js)</li>
+                <li>Fitness & discipline as foundations for growth</li>
+            </ul>
+            <!-- See more link -->
+            <a href="{% url 'skills' %}" class="see-more">See more ➔</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -112,7 +112,7 @@
         .sub-box h5 {
             font-size: 1.2rem;
             font-weight: 600;
-            color: royalblue; /* same as Full-stack Engineer */
+            color: royalblue;
             margin-bottom: 0.5rem;
         }
         .sub-box p {
@@ -121,8 +121,19 @@
         }
         .status-text {
             font-size: 1rem;
-            color: rgba(248, 249, 250, 0.6); /* semi-transparent light text */
+            color: rgba(248, 249, 250, 0.6);
             margin-top: 0.5rem;
+        }
+        .see-more {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #f8f9fa;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .see-more:hover {
+            color: royalblue;
+            transform: translateX(5px);
         }
         @keyframes fadeInLeft {
             from { opacity: 0; transform: translateX(-50px); }
@@ -155,7 +166,6 @@
                 </div>
             </div>
 
-
             <!-- Middle Container -->
             <div class="stack-container" style="flex-direction: column; align-items: flex-start;">
                 <h4>Primary Stack</h4>
@@ -173,12 +183,19 @@
             </div>
 
             <!-- Lower Container -->
-            <div class="stack-container" style="flex-direction: column; align-items: flex-start;">
-                <h4>Status</h4>
-                <div class="sub-box">
-                    <p>Open for opportunities</p>
+            <div class="stack-container" style="flex-direction: column;">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <div>
+                        <h4>Status</h4>
+                        <div class="sub-box">
+                            <p>Open for opportunities</p>
+                        </div>
+                        <p class="status-text">Available for full-time roles & consulting</p>
+                    </div>
+                    <div>
+                        <a href="{% url 'about' %}" class="see-more">See more ➔</a>
+                    </div>
                 </div>
-                <p class="status-text">Available for full-time roles & consulting</p>
             </div>
         </div>
     </div>
