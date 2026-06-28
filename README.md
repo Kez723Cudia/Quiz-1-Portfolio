@@ -83,3 +83,5 @@ Then:
 - Hero page improved with professional font, larger text, optimized layout, CTA button styling, and Primary Stack section.
 - Hero page refined with Helvetica font, vertically stretched names, optimized tagline spacing, and larger right-side containers.
 - Hero page finalized with upper stats (23+ Clients Worldwide), middle Primary Stack section, and lower Status section (Available for opportunities, open for full-time roles & consulting).
+- Added Hero page with "See more ➔" navigation
+- Implemented About page with bio, timeline, passions, and cohesive design
