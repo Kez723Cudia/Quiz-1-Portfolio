@@ -67,8 +67,9 @@ Then:
 
 ### Progress
 
-    - Django project initialized and verified.
-    - Home app created and registered in `INSTALLED_APPS`.
-    - Basic Hero page view added and tested at root URL (`/`).
-    - Server runs successfully with no issues (`python manage.py check` passed).
-    - Bootstrap integrated via CDN and verified with placeholder page.
+- Django project initialized and verified.
+- Home app created and registered in `INSTALLED_APPS`.
+- Basic Hero page view added and tested at root URL (`/`).
+- Server runs successfully with no issues (`python manage.py check` passed).
+- Bootstrap integrated via CDN and verified with placeholder page.
+- Bootstrap Navbar added to hero.html and verified locally.
