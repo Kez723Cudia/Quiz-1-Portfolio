@@ -81,3 +81,4 @@ Then:
   - CTA button styled with navy border and matching metallic blue background.
   - Right side (2/5 width) updated to darker metallic blue, consistent with button color.
 - Hero page improved with professional font, larger text, optimized layout, CTA button styling, and Primary Stack section.
+- Hero page refined with Helvetica font, vertically stretched names, optimized tagline spacing, and larger right-side containers.
