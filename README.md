@@ -73,3 +73,4 @@ Then:
 - Server runs successfully with no issues (`python manage.py check` passed).
 - Bootstrap integrated via CDN and verified with placeholder page.
 - Bootstrap Navbar added to hero.html and verified locally.
+- Bootstrap Hero section created with heading, tagline, and CTA button.
