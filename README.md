@@ -71,4 +71,4 @@ Then:
     - Home app created and registered in `INSTALLED_APPS`.
     - Basic Hero page view added and tested at root URL (`/`).
     - Server runs successfully with no issues (`python manage.py check` passed).
-    - Next step: Replace plain `HttpResponse` with a Bootstrap Hero template for a neat and  convincing UI.
+    - Bootstrap integrated via CDN and verified with placeholder page.
