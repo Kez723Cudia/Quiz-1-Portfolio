@@ -19,36 +19,68 @@
             align-items: flex-start;
             padding: 5rem 4rem;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* professional font */
+            animation: fadeInLeft 1.5s ease-in-out; /* minimal animation */
         }
         .hero-left h1 {
-            font-size: 4.5rem; /* larger first name */
+            font-size: 5rem; /* larger first name */
             font-weight: 800;
             color: #f8f9fa;
+            letter-spacing: 0.1em; /* spacing for aesthetics */
             margin-bottom: 0.5rem;
         }
         .hero-left h2 {
-            font-size: 4rem; /* larger surname */
+            font-size: 4.5rem; /* larger surname */
             font-weight: 800;
             color: navy;
+            letter-spacing: 0.1em;
             margin-bottom: 1rem;
         }
+        .hero-left h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: rgba(248, 249, 250, 0.8);
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
         .hero-left p {
-            font-size: 1.5rem; /* increased tagline size */
+            font-size: 1.8rem; /* increased tagline size */
             font-weight: 600;
             color: rgba(248, 249, 250, 0.8);
+            letter-spacing: 0.05em;
             margin-bottom: 1.5rem;
         }
-        .hero-right {
-            flex: 2; /* 2/5 width */
-            background-color: #0a3d91; /* darker metallic blue */
-        }
         .btn-custom {
-            background-color: #0a3d91; /* same as right side */
+            background-color: #0a2f6b; /* darker metallic blue */
             border: 2px solid navy; /* navy border */
             color: #fff;
         }
         .btn-custom:hover {
-            background-color: #072c6b; /* darker hover */
+            background-color: #07224d;
+        }
+        .hero-right {
+            flex: 2; /* 2/5 width */
+            background-color: #0a2f6b; /* darker metallic blue */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2rem;
+        }
+        .stack-container {
+            background-color: rgba(255, 255, 255, 0.1); /* semi-transparent darker blue */
+            flex: 1;
+            margin: 1rem 0;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+        .stack-container h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: rgba(0, 123, 255, 0.7); /* semi-transparent blue shade */
+            margin-bottom: 1rem;
+        }
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
         }
     </style>
 </head>
@@ -59,17 +91,23 @@
         <div class="hero-left">
             <h1>Kezia Yuriese</h1>
             <h2>Cudia</h2>
+            <h3>Full-stack Engineer</h3>
             <p>Improves systems and develops innovative solutions.</p>
-            <a href="#" class="btn btn-custom btn-lg mt-3">Get in Touch</a>
+            <a href="#" class="btn btn-custom btn-lg mt-3">Work with Me</a>
         </div>
 
         <!-- Right Side -->
-        <div class="hero-right"></div>
+        <div class="hero-right">
+            <div class="stack-container"></div>
+            <div class="stack-container">
+                <h4>Primary Stack</h4>
+                <p>Django, Bootstrap, Python, HTML/CSS, JavaScript, Git/GitHub, SQLite/PostgreSQL</p>
+            </div>
+            <div class="stack-container"></div>
+        </div>
     </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
