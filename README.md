@@ -86,6 +86,9 @@ Then:
 - Added Hero page with "See more ➔" navigation
 - Implemented About page with bio, timeline, passions, and cohesive design
 - Implemented Skills page with categorized competencies (Technical, Professional, Soft).
+- Implemented Projects page with placeholders for Arduino builds and future cloud/web projects.
+- Implemented Contact page with “Build With Me” heading, Drop me a mes
 - Added hover animations for Previous/See more links across all pages.
 - Added hover animations for tracker navbar links.
 - Fixed tracker navbar active state indicator (underline only active page).
+- Hero page “Work with Me” button now routes directly to Contact page.
