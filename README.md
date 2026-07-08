@@ -92,3 +92,52 @@ Then:
 - Added hover animations for tracker navbar links.
 - Fixed tracker navbar active state indicator (underline only active page).
 - Hero page “Work with Me” button now routes directly to Contact page.
+
+# Quiz 2
+
+Welcome! This is a continuation of Quiz 1. The same repository, files, and folders are used.  
+Quiz 2 introduces backend and database functionality, with strict workflow rules.
+
+## Instructions
+To run this project locally and verify its functionality:
+
+1. **Clone the repository**
+```bash
+    git clone https://github.com/<Ky723Cudia>/Quiz-1-Portfolio.git
+    cd Quiz-1-Portfolio
+```
+
+2. **Create and activate a virtual environment**
+```bash
+    python -m venv venv
+    source venv/bin/activate   # for Mac/Linux
+    venv\Scripts\activate      # for Windows
+```
+
+3. **Install dependencies**
+```bash
+    pip install -r requirements.txt
+```
+
+4. **Apply migrations to set up the database**
+```bash
+    python manage.py makemigrations
+    python manage.py migrate
+```
+
+5. **Create a superuser account**
+```bash
+    python manage.py createsuperuser
+```
+- This allows any user to log in with their own credentials.
+- Once logged in at http://127.0.0.1:8000/admin/, they can view and manage Projects and Personal Information.
+
+6. **Run the development server**
+```bash
+    python manage.py runserver
+```
+
+7. **Access the site in a browser**
+- For the Portfolio pages, open http://127.0.0.1:8000/ (this link is displayed in the terminal after starting the server).
+- For the admin dashboard, open: http://127.0.0.1:8000/admin/ Just add 'admin/' to the URL of the portfolio pages.
+    - Then login with the superuser account created earlier.
