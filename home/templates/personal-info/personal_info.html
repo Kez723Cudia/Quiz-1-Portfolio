@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Information - Engr. Kezia Yuriese Cudia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #111; font-family: Helvetica, Arial, sans-serif; color: #f8f9fa; }
+        .info-container { padding: 5rem 4rem; animation: fadeInUp 1.5s ease-in-out; }
+        .info-container h1 { font-size: 3.5rem; font-weight: 800; color: navy; margin-bottom: 2rem; }
+        .info-card { background-color: rgba(173, 216, 230, 0.1); border-left: 4px solid royalblue; padding: 1.5rem; margin-bottom: 2rem; border-radius: 0.3rem; }
+        .info-card strong { font-size: 1.5rem; color: royalblue; }
+        .info-card p { font-size: 1.1rem; color: rgba(248, 249, 250, 0.85); }
+        .nav-link { font-size: 1rem; font-weight: 600; color: royalblue; text-decoration: none; transition: all 0.3s ease; margin-top: 1rem; }
+        .nav-link:hover { color: #f8f9fa; transform: translateX(5px); }
+        .tracker-navbar { display: flex; justify-content: center; gap: 2rem; margin-top: 1rem; }
+        .tracker-link { font-size: 1rem; font-weight: 600; color: #127CD6; text-decoration: none; transition: all 0.3s ease; }
+        .tracker-link:hover { color: #0072C6; transform: translateX(5px); }
+        .tracker-active { color: #0072C6; border-bottom: 2px solid #0072C6; padding-bottom: 2px; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+    <div class="info-container container">
+        <h1>Personal Information</h1>
+
+        {% for info in personal_info %}
+        <div class="info-card">
+            <strong>{{ info.first_name }} {% if info.middle_name %}{{ info.middle_name }}{% endif %} {{ info.last_name }}</strong>
+            <p>{{ info.summary }}</p>
+            <p>Contact Number: {{ info.contact_number }}</p>
+            <p>Email: {{ info.email }}</p>
+            <p>Address: {{ info.address }}</p>
+        </div>
+        {% empty %}
+        <p>No personal information available.</p>
+        {% endfor %}
+
+        <a href="{% url 'contact' %}" class="nav-link nav-left">< Previous</a>
+
+        <nav class="tracker-navbar">
+            <a href="{% url 'home' %}" class="tracker-link">Hero</a>
+            <a href="{% url 'about' %}" class="tracker-link">About</a>
+            <a href="{% url 'skills' %}" class="tracker-link">Skills</a>
+            <a href="{% url 'project_list' %}" class="tracker-link">Projects</a>
+            <a href="{% url 'contact' %}" class="tracker-link">Contact</a>
+            <a href="{% url 'personal_info' %}" class="tracker-link tracker-active">Personal Info</a>
+        </nav>
+    </div>
+</body>
+</html>
