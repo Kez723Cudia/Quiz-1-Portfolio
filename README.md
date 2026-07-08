@@ -141,3 +141,31 @@ To run this project locally and verify its functionality:
 - For the Portfolio pages, open http://127.0.0.1:8000/ (this link is displayed in the terminal after starting the server).
 - For the admin dashboard, open: http://127.0.0.1:8000/admin/ Just add 'admin/' to the URL of the portfolio pages.
     - Then login with the superuser account created earlier.
+- For dynamic views:
+    http://127.0.0.1:8000/projects/list/
+    http://127.0.0.1:8000/projects/1/
+    http://127.0.0.1:8000/projects/personal-info/
+
+
+### Progress in Quiz 2
+
+- Added `Project` and `PersonalInformation` models with appropriate fields for project details and personal data.
+- Registered both models in Django Admin for management and verification.
+- Created function-based views in `projects/views.py`:
+  - `list_view` — displays all projects dynamically from the database.
+  - `detail_view` — shows details for a single project by ID.
+  - `personal_info_view` — displays personal information records.
+- Updated `projects/urls.py` to include routes for list, detail, and personal info views.
+- Built new templates in `home/templates/projects/`:
+  - `list.html` — renders all projects with clickable links to detail pages.
+  - `detail.html` — renders full details of a single project.
+  - `personal_info.html` — renders personal information records.
+- Verified routing and template rendering:
+  - `/projects/list/` shows all projects.
+  - `/projects/1/` shows details for project ID 1.
+  - `/projects/personal-info/` shows personal information.
+- Tested with sample data in Django Admin:
+  - Added a project named **Portfolio** with description, tech stack, and GitHub link.
+  - Added a personal information record with full name, contact number, email, and address.
+- Confirmed templates now render dynamic data from the database instead of hardcoded HTML.
+

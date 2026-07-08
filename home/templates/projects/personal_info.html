@@ -1,0 +1,22 @@
+
+<html>
+<head>
+    <title>Personal Information</title>
+</head>
+<body>
+    <h1>Personal Information</h1>
+    <ul>
+        {% for info in personal_info %}
+            <li>
+                <strong>{{ info.first_name }} {{ info.middle_name }} {{ info.last_name }}</strong><br>
+                Summary: {{ info.summary }}<br>
+                Contact Number: {{ info.contact_number }}<br>
+                Email: {{ info.email }}<br>
+                Address: {{ info.address }}
+            </li>
+        {% empty %}
+            <li>No personal information available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
