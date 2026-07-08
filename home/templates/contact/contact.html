@@ -60,6 +60,24 @@
         .contact-details a:hover {
             color: #f8f9fa;
         }
+
+            .see-more-link {
+            display: block;          /* makes it respect alignment */
+            text-align: right;       /* pushes text to the right */
+            font-size: 1rem;
+            font-weight: 600;
+            color: royalblue;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            }
+
+             .see-more-link:hover {
+            color: #f8f9fa;
+            transform: translateX(5px);
+            }
+
+
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(50px); }
             to { opacity: 1; transform: translateY(0); }
@@ -141,14 +159,16 @@
             <p>Availability: Open for opportunities, flexible depending on project scope</p>
             
         <!-- Navigation link -->
-        <a href="{% url 'projects' %}" class="nav-link nav-left">< Previous</a>
+        <a href="{% url 'project_list' %}" class="nav-link nav-left">< Previous</a>
+        <a href="{% url 'personal_info' %}" class="see-more-link">See more ></a>
 
         <nav class="tracker-navbar">
             <a href="{% url 'home' %}" class="tracker-link">Hero</a>
             <a href="{% url 'about' %}" class="tracker-link">About</a>
             <a href="{% url 'skills' %}" class="tracker-link">Skills</a>
-            <a href="{% url 'projects' %}" class="tracker-link">Projects</a>
+            <a href="{% url 'project_list' %}" class="tracker-link">Projects</a>
             <a href="{% url 'contact' %}" class="tracker-link tracker-active">Contact</a>
+            <a href="{% url 'personal_info' %}" class="tracker-link">Personal Info</a>
         </nav>
 
         </div>

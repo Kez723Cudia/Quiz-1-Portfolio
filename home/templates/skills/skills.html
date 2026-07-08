@@ -151,14 +151,15 @@
             </ul>
         <!-- Navigation links -->
         <a href="{% url 'about' %}" class="nav-link nav-left">< Previous</a>
-        <a href="{% url 'projects' %}" class="nav-link nav-right">See more > </a>
+        <a href="{% url 'project_list' %}" class="nav-link nav-right">See more > </a>
 
         <nav class="tracker-navbar">
             <a href="{% url 'home' %}" class="tracker-link">Hero</a>
             <a href="{% url 'about' %}" class="tracker-link">About</a>
             <a href="{% url 'skills' %}" class="tracker-link tracker-active">Skills</a>
-            <a href="{% url 'projects' %}" class="tracker-link">Projects</a>
+            <a href="{% url 'project_list' %}" class="tracker-link">Projects</a>
             <a href="{% url 'contact' %}" class="tracker-link">Contact</a>
+            <a href="{% url 'personal_info' %}" class="tracker-link">Personal Info</a>
         </nav>
 
 
