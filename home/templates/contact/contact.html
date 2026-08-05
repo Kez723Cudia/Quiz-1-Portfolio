@@ -131,23 +131,38 @@
 <body>
     <div class="contact-container container">
         <h1>Build With Me</h1>
-        <form>
+        <form method="post">
+            {% csrf_token %}
             <div class="mb-3">
-                <label for="name" class="form-label">Your Name *</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                {{ form.first_name.label_tag }}
+                {{ form.first_name }}
             </div>
             <div class="mb-3">
-                <label for="email" class="form-label">Your Email *</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                {{ form.last_name.label_tag }}
+                {{ form.last_name }}
             </div>
             <div class="mb-3">
-                <label for="message" class="form-label">Drop me a message *</label>
-                <textarea class="form-control" id="message" rows="5" placeholder="Write your message" required></textarea>
+                {{ form.contact_number.label_tag }}
+                {{ form.contact_number }}
+            </div>
+            <div class="mb-3">
+                {{ form.email.label_tag }}
+                {{ form.email }}
+            </div>
+            <div class="mb-3">
+                {{ form.address.label_tag }}
+                {{ form.address }}
+            </div>
+            <div class="mb-3">
+                {{ form.message.label_tag }}
+                {{ form.message }}
             </div>
             <button type="submit" class="btn btn-submit">
                 <i class="bi bi-send-fill"></i> Submit
             </button>
         </form>
+
+
 
         <div class="contact-details">
             <h2>Contact Details</h2>
@@ -169,6 +184,7 @@
             <a href="{% url 'project_list' %}" class="tracker-link">Projects</a>
             <a href="{% url 'contact' %}" class="tracker-link tracker-active">Contact</a>
             <a href="{% url 'personal_info' %}" class="tracker-link">Personal Info</a>
+            <a href="{% url 'testimony_list' %}" class="tracker-link">Testimonies</a>
         </nav>
 
         </div>

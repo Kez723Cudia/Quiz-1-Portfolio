@@ -10,8 +10,39 @@
         .info-card { background-color: rgba(173, 216, 230, 0.1); border-left: 4px solid royalblue; padding: 1.5rem; margin-bottom: 2rem; border-radius: 0.3rem; }
         .info-card strong { font-size: 1.5rem; color: royalblue; }
         .info-card p { font-size: 1.1rem; color: rgba(248, 249, 250, 0.85); }
-        .nav-link { font-size: 1rem; font-weight: 600; color: royalblue; text-decoration: none; transition: all 0.3s ease; margin-top: 1rem; }
-        .nav-link:hover { color: #f8f9fa; transform: translateX(5px); }
+        
+        .see-more {
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 600;
+            color: royalblue;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            float: right;
+            margin-top: 1rem;
+        }
+        .see-more:hover {
+            color: royalblue;
+            transform: translateX(5px);
+        }
+        .nav-link {
+            font-size: 1rem;
+            font-weight: 600;
+            color: royalblue;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        .nav-link:hover {
+            color: #f8f9fa;
+            transform: translateX(5px);
+        }
+        .nav-left {
+            float: left;
+        }
+        .nav-right {
+            float: right;
+        }
         .tracker-navbar { display: flex; justify-content: center; gap: 2rem; margin-top: 1rem; }
         .tracker-link { font-size: 1rem; font-weight: 600; color: #127CD6; text-decoration: none; transition: all 0.3s ease; }
         .tracker-link:hover { color: #0072C6; transform: translateX(5px); }
@@ -35,7 +66,13 @@
         <p>No personal information available.</p>
         {% endfor %}
 
-        <a href="{% url 'contact' %}" class="nav-link nav-left">< Previous</a>
+
+            <div>
+                <a href="{% url 'contact' %}" class="nav-link nav-left">< Previous</a>
+                <a href="{% url 'testimony_list' %}" class="nav-link nav-right">See more ></a>
+            </div>
+
+
 
         <nav class="tracker-navbar">
             <a href="{% url 'home' %}" class="tracker-link">Hero</a>
@@ -44,6 +81,7 @@
             <a href="{% url 'project_list' %}" class="tracker-link">Projects</a>
             <a href="{% url 'contact' %}" class="tracker-link">Contact</a>
             <a href="{% url 'personal_info' %}" class="tracker-link tracker-active">Personal Info</a>
+            <a href="{% url 'testimony_list' %}" class="tracker-link">Testimonies</a>
         </nav>
     </div>
 </body>
