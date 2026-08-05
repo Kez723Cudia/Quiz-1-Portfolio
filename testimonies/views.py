@@ -8,7 +8,7 @@ def testimony_create_view(request):
     form = TestimonyForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('testimony_list')  # redirect to list after saving
+        return redirect('testimony_create')  # Redirect to the same page after successful submission
     return render(request, 'testimonies/create.html', {'form': form})
 
 # Class-based view: List testimonies

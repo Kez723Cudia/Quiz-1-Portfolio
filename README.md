@@ -205,3 +205,122 @@ To run this project locally and verify its functionality:
 - Final polish:
   - Confirmed templates now render dynamic data from the database.
   - Ensuring the portfolio is both functional and styled.
+
+
+# Quiz 3
+
+Welcome! This is a continuation of Quiz 1. The same repository, files, and folders are used.  
+Quiz 2 introduces new models, forms, and views for **Projects, Contact (Inquiries), and Testimonies**.
+
+## Instructions
+
+To run and check Quiz 3 locally:
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/<Ky723Cudia>/Quiz-1-Portfolio.git
+cd Quiz-1-Portfolio
+```
+2. **Create and activate a virtual environment**
+```bash
+python -m venv venv
+source venv/bin/activate   # Mac/Linux
+venv\Scripts\activate      # Windows
+```
+3. **Install dependencies**
+```bash
+pip install -r requirements.txt
+```
+4. **Apply migrations**
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+5. **Run the development server**
+```bash
+python manage.py runserver
+```
+6. **Navigate the portfolio via buttons**
+- Use the navbar to move between Hero, About, Skills, Projects, Contact, Personal Info, and Testimonies.
+- Verify navigation flow with Previous and See more buttons across pages.
+- On the Projects list page, click any project title to view its detail.
+- Use the Add Project button to access the create view and add a new project.
+- On the Testimonies list page, click any testimony to view its detail.
+- Use the Share Your Testimony button to access the create view and submit a testimony.
+7. **Check placeholders/test data**
+- Disclaimer: Some placeholders served as testers (specifically, in projects and testimonies) were intentionally left in the database and templates during testing. These serve as evidence of correctness: you can see them listed, click into their detail views, and confirm that create forms work properly.
+8. **Backend verification (optional)**
+- Access the Django Admin at http://127.0.0.1:8000/admin/ with a superuser account.
+- From there, you can view and confirm entries for Projects, Inquiries, and Testimonies directly in the database.
+
+## Procedures
+1. Created a new branch named quiz3 and switched to it locally, then pushed it to the remote repository.
+2. Created a new app for testimonies, then added it to the project folder’s (portfolio) settings.py.
+3. Added models: in contact/models.py created a model (class) for Inquiry; and in testimonies/models.py created a model (class) for Testimony.
+4. Ran migrations to generate the database tables for Inquiry and Testimony.
+5. Committed changes.
+6. Registered models in Admin: added and viewed the Inquiry and Testimony models in the Django Admin panel.
+ - Changes made in:
+          contact/admin.py
+          testimonies/admin.py
+- Saved changes and ran the server. Verified that “Inquirys” appeared under Contact and “Testimonys” under Testimonies.
+7. Created a new file named forms.py inside the Contact app folder. Added a class InquiryForm which connects directly to the Inquiry model, enabling form rendering in HTML templates and saving submissions into the database.
+8. Wired the form into the Contact page through a view. When a user submits, Django saves the data into the Inquiry model.
+ - Changes made in:
+          contact/views.py
+          contact/urls.py
+          home/templates/contact.html (custom field rendering)
+9. Added Bootstrap styling to make inputs consistent with the design. Updated the InquiryForm in contact/forms.py. Tested and confirmed functionality.
+10. Committed changes.
+11. Created a new forms.py file in the Testimonies app folder. Added a class TestimonyForm in testimonies/forms.py.
+12. Added views:
+ - Function-Based Create View in testimonies/views.py
+ - Class-Based List View in testimonies/views.py
+13. Created a new urls.py in the Testimonies app folder and wired the paths.
+14. Included Testimonies URLs in the project folder’s (portfolio) urls.py.
+15. Created a new subfolder testimonies in home/templates.
+16. Added create.html and list.html in home/templates/testimonies and coded their contents.
+17. Updated the navbar: added the Testimonies link across all existing pages.
+- Changes made in:
+ - home/templates/about/about.html
+ - home/templates/contact/contact.html
+ - home/templates/home/home.html
+ - home/templates/personal-info/personal_info.html
+ - home/templates/projects/detail.html
+ - home/templates/projects/list.html
+ - home/templates/skills/skills.html
+ - home/templates/testimonies/create.html
+ - home/templates/testimonies/list.html
+18. Improved styling in testimonies/list.html for a polished and consistent look.
+19. Improved styling in testimonies/create.html to harmonize with the portfolio design.
+20. Wired in the Previous / See more links to complete page-to-page flow.
+21. Committed changes.
+22. Added a function testimony_detail in testimonies/views.py.
+23. Wired the URL in testimonies/urls.py.
+24. Created detail.html in home/templates/testimonies/ and coded its content.
+25. Added sample testimonies to test the functionality of list, create, and detail views.
+26. Updated testimony_create_view in views.py to redirect to the list view after saving.
+27. Improved detail.html styling for consistency with the portfolio.
+28. Committed changes.
+29. Updated testimony_create_view in views.py to reload the create view after saving (same page refresh).
+30. Created a new forms.py in the Projects app folder and coded its contents.
+31. Added the create view in projects/views.py.
+32. Wired the URL in projects/urls.py.
+33. Created the template create.html in home/templates/projects/ and coded its content.
+34. Updated the Projects create view to render each field manually with .form-control for consistent styling. 
+
+## Progress
+1. The Inquiry model is fully functional and connected to the existing Contact page (originally created in Quiz 1). 
+- Visitors can submit inquiries through the Contact form, and their submissions are saved into the database via the Inquiry model. 
+- The form is styled with Bootstrap for consistency. 
+- The Contact page also displays my personal contact details, and navigation is verified through buttons (navbar, Previous, See more).
+2. The Testimonies feature was newly added in Quiz 3. 
+- It includes a create page where visitors can submit feedback using a Django Form and a Function-Based Create View. Submitted testimonies are saved into the database and displayed on the list page, which uses a Class-Based List View. 
+- Each testimony name is clickable and routes to a detail page, which uses a Function-Based Detail View to show the full content. Placeholders and test testimonies were left in the database to demonstrate correctness and allow verification of the create → list → detail flow. 
+- Navigation is verified through buttons (Share Your Testimony, Previous, Back to list, navbar links).
+3. The Projects feature now includes a detail view. 
+- Each project listed is clickable and routes to its detail page, which displays the project’s name, description, tech stack, and external link. 
+- The detail page is styled consistently with the portfolio and includes navigation back to the Projects list. 
+- Test projects were left in the database to demonstrate correctness and allow verification of the create → list → detail flow.
+5. Backend accessible via Django Admin for direct database checks.
+
