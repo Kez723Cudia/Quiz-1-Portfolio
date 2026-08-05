@@ -1,7 +1,7 @@
 from django.urls import path
-from . import views
+from .views import inquiry_create_view
 
 urlpatterns = [
-    path('', views.contact_page, name='contact'),
+    path('', inquiry_create_view, name='contact'),
 ]
 
