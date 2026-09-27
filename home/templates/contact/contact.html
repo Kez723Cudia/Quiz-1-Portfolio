@@ -29,15 +29,17 @@
             background-color: rgba(173, 216, 230, 0.2);
             border-color: royalblue;
             box-shadow: none;
+            color: #f8f9fa;
         }
         .btn-submit {
-            background-color: royalblue;
-            color: #fff;
+            background-color: #2ba728;
+            color: #000000;
             font-weight: 600;
             transition: all 0.3s ease;
         }
         .btn-submit:hover {
-            background-color: navy;
+            background-color: #fff;
+            color: #2ba728;
         }
         .contact-details {
             margin-top: 3rem;
@@ -62,8 +64,8 @@
         }
 
             .see-more-link {
-            display: block;          /* makes it respect alignment */
-            text-align: right;       /* pushes text to the right */
+            display: block;          
+            text-align: right;       
             font-size: 1rem;
             font-weight: 600;
             color: royalblue;
@@ -109,18 +111,18 @@
         .tracker-link {
             font-size: 1rem;
             font-weight: 600;
-            color: #127CD6; /* Outlook blue */
+            color: #127CD6; 
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         .tracker-link:hover {
-            color: #0072C6; /* Spanish blue */
+            color: #0072C6; 
             transform: translateX(5px);
         }
 
         .tracker-active {
-            color: #0072C6; /* Active page shade */
+            color: #0072C6; 
             border-bottom: 2px solid #0072C6;
             padding-bottom: 2px;
         }
@@ -131,6 +133,16 @@
 <body>
     <div class="contact-container container">
         <h1>Build With Me</h1>
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+
         <form method="post">
             {% csrf_token %}
             <div class="mb-3">
@@ -189,5 +201,6 @@
 
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
