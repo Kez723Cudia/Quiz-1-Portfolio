@@ -57,7 +57,80 @@
         <h1>Owner Dashboard</h1>
 
         <div class="dashboard-card">
-            <h2>Welcome, {{ request.user.username }}</h2>
+
+            <div class="mb-3">
+                <a href="{% url 'project_create' %}" class="btn btn-primary">
+                    Create Project
+                </a>
+            </div>
+
+            <h2>Projects</h2>
+            
+            <table class="table table-dark table-striped mt-3">
+                <thead>
+                    <tr>
+                        <th scope="col">Project Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Tech Stacks</th>
+                        <th scope="col">Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for project in projects %}
+                    <tr>
+                        <td>{{ project.project_name }}</td>
+                        <td>{{ project.description|truncatechars:50 }}</td>
+                        <td>
+                            {% for tech_stack in project.tech_stacks.all %}
+                                {{ tech_stack.name }}{% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        </td>
+                        <td><a href="{{ project.link }}" target="_blank" class="btn btn-primary btn-sm">View</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <hr class="my-5">
+
+            <div class="mb-3">
+                <a href="{% url 'techstack_create' %}" class="btn btn-primary">
+                    Create Tech Stack
+                </a>
+            </div>
+
+            <h2>Tech Stacks</h2>
+
+            <table class="table table-dark table-striped mt-3">
+                <thead>
+                    <tr>
+                        <th>Tech Stack Name</th>
+                        <th>Project It Was Used</th>
+                        <th>Date Added</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for tech_stack in tech_stacks %}
+                    <tr>
+                        <td>{{ tech_stack.name }}</td>
+
+                        <td>
+                            {% for project in tech_stack.projects.all %}
+                                {{ project.project_name }}
+                                {% if not forloop.last %}, {% endif %}
+                            {% empty %}
+                                None
+                            {% endfor %}
+                        </td>
+
+                        <td>{{ tech_stack.created_at }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+
 
             <p>
                 Authentication was successful. The Projects and Tech Stacks

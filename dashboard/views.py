@@ -2,6 +2,8 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_POST
+from projects.models import Project, TechStack
+from projects.forms import TechStackForm
 
 
 def superuser_sign_in(request):
@@ -52,8 +54,44 @@ def dashboard_home(request):
         )
         return redirect("dashboard_sign_in")
 
-    return render(request, "dashboard/dashboard.html")
+    projects = Project.objects.all()
+    tech_stacks = TechStack.objects.all()
 
+    return render(
+        request,
+        "dashboard/dashboard.html",
+        {
+            "projects": projects,
+            "tech_stacks": tech_stacks,
+        }
+    )
+
+
+def techstack_create_view(request):
+    if not request.user.is_authenticated:
+        return redirect("dashboard_sign_in")
+
+    if not request.user.is_superuser:
+        logout(request)
+        return redirect("dashboard_sign_in")
+
+    form = TechStackForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        messages.success(
+            request,
+            "Tech stack created successfully."
+        )
+        return redirect("dashboard_home")
+
+    return render(
+        request,
+        "dashboard/techstack_create.html",
+        {
+            "form": form,
+        }
+    )
 
 @require_POST
 def dashboard_logout(request):
