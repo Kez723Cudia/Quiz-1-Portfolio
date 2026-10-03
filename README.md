@@ -324,3 +324,79 @@ python manage.py runserver
 - Test projects were left in the database to demonstrate correctness and allow verification of the create → list → detail flow.
 5. Backend accessible via Django Admin for direct database checks.
 
+# Quiz 5 & 6
+
+Welcome! This is a continuation of Quiz 1, Quiz 2, and Quiz 3. The same repository, files, and folders are used.
+
+Quiz 5 & 6 introduces:
+- Admin-only authentication.
+- Owner dashboard.
+- Tech Stack model and database normalization.
+- Dashboard project management.
+- Dashboard tech stack management.
+- Environment variable preparation for deployment.
+
+## Instructions
+1. **Clone the repository**
+```bash
+git clone https://github.com/<Ky723Cudia>/Quiz-1-Portfolio.git
+
+cd Quiz-1-Portfolio
+```
+2. **Create and activate a virtual environment**
+```bash
+python -m venv venv
+source venv/bin/activate   # Mac/Linux
+venv\Scripts\activate      # Windows
+```
+3. **Install dependencies**
+```bash
+pip install -r requirements.txt
+```
+4. **Create environment variables**
+Create:
+```bash
+.env
+```
+using the provided:
+```bash
+.env.example
+```
+template.
+
+  e.g.
+  ```bash
+  SECRET_KEY=your-secret-key-here
+ 
+  DEBUG=True
+ 
+  ALLOWED_HOSTS=localhost,127.0.0.1
+  ```
+
+5. **Apply migrations**
+```bash
+python manage.py migrate
+```
+
+6. **Create a superuser**
+```bash
+python manage.py createsuperuser
+```
+Follow the prompts and remember the credentials.
+
+7. **Run the development server**
+```bash
+python manage.py runserver
+```
+
+8. **Dashboard Access**
+Navigate to:
+```bash
+http://127.0.0.1:8000/sign-in/
+```
+Only superusers are allowed to authenticate through this page.
+Then upon successful authentication, the user is redirected to:
+```bash
+http://127.0.0.1:8000/dashboard/
+```
+

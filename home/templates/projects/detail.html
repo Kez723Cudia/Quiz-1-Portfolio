@@ -96,7 +96,14 @@
         <div class="project-card">
             <h2>{{ project.project_name }}</h2>
             <p>{{ project.description }}</p>
-            <p><strong>Tech Stack:</strong> {{ project.tech_stack }}</p>
+            <p>
+                <strong>Tech Stacks:</strong>
+
+                {% for tech_stack in project.tech_stacks.all %}
+                    {{ tech_stack.name }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </p>
+
             <p><a href="{{ project.link }}" target="_blank" class="btn-view">View Project</a></p>
         </div>
 
